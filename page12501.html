@@ -187,8 +187,9 @@ function init11() {
   findWH()
   if( is.min ){
     trivPageTracking.InitPageTracking();
-    PreloadResources(new Array(button12521,image12503,image12505,og12506,image12508,text12509,text12510,text12511,shape12513))
+    PreloadResources(new Array(shape12513,button12521,image12503,image12505,og12506,image12508,text12509,text12510,text12511))
     pageLayer.show(true);
+    shape12513.init()
     button12521.init()
     image12503.init()
     image12505.init()
@@ -197,7 +198,7 @@ function init11() {
     text12509.init()
     text12510.init()
     text12511.init()
-    shape12513.init()
+    shape12513.activate()
     button12521.activate()
     image12503.activate()
     image12505.activate()
@@ -206,7 +207,6 @@ function init11() {
     text12509.activate()
     text12510.activate()
     text12511.activate()
-    shape12513.activate()
 button12521.strCookieState = (trivBtnTracking.GetRangeStatus(12521,true));
 button12521.loadStateFromSes("normalState");
 		    try{
@@ -319,6 +319,20 @@ function OnDeviceRotate() {
 
 }
 
+function action12514(fn){
+    trivExitPage('page15140.html',true); 
+    if(fn && typeof(fn) == 'string' ) eval(fn);
+    else if(fn && typeof(fn) == 'function' ) fn();
+}
+
+function shape12513onUp() {
+  action12514();
+}
+
+function shape12513actionShow() {
+  setTimeout("if(!shape12513.isVisible()) { shape12513.objLyr.doTrans( 0, 33, 4, null, shape12513.objLyr.x, shape12513.objLyr.y, -46, -43, winW+20, winH+20, 0, -1, 0 ); }", 1 )
+}
+
 function action12522(fn){
     trivExitPage('page5889.html',true); 
     if(fn && typeof(fn) == 'string' ) eval(fn);
@@ -335,22 +349,25 @@ function button12521onUp() {
   action12522();action12523();
 }
 
-function action12514(fn){
-    trivExitPage('page15140.html',true); 
-    if(fn && typeof(fn) == 'string' ) eval(fn);
-    else if(fn && typeof(fn) == 'function' ) fn();
-}
-
-function shape12513onUp() {
-  action12514();
-}
-
-function shape12513actionShow() {
-  setTimeout("if(!shape12513.isVisible()) { shape12513.objLyr.doTrans( 0, 33, 4, null, shape12513.objLyr.x, shape12513.objLyr.y, -46, -43, winW+20, winH+20, 0, -1, 0 ); }", 1 )
-}
-
 if( is.min ){
-button12521 = new ObjButton('button12521', 'Back',76,73,82.000000,35.000000,1,20,'div','',1,0)
+shape12513 = new ObjImage('shape12513','images/shape12513.png','Triangle Right',827,440,28.000000,25.000000,1,20,'div','',0 )
+shape12513.initRotateAngle(0,0,0,-1.000000,-1.000000,26,23)
+shape12513.initHasShadow(0)
+shape12513.initHasReflection(0)
+shape12513.setUniqueFillID('page12501_shape12513')
+shape12513.addIe8Attr(827.000000, 440.000000, 28.000000, 25.000000, 0, 0)
+shape12513.initImageMap(1,'27,12,1,24,1,1,27,12','M 27.000000 12.000000 L 1.000000 24.000000 L 1.000000 1.000000 L 27.000000 12.000000 z', '', 'stroke:#010000; stroke-width:1; stroke-linejoin:round;stroke-dasharray: none; fill:#21314D;"' , '')
+shape12513.setUseSvgFile(1)
+shape12513.addBorder(0)
+shape12513.initLineWeight(1)
+shape12513.addOpacity(100)
+shape12513.onUp = shape12513onUp
+shape12513.hasOnUp = true
+shape12513.actionShow = shape12513actionShow
+shape12513.capture=4
+shape12513.build()
+
+button12521 = new ObjButton('button12521', 'Back',76,73,82.000000,35.000000,1,21,'div','',1,0)
 button12521.setUseSvgFile(1)
 button12521.setFillStyle(1)
 button12521.setUniqueFillID('page12501_button12521')
@@ -375,7 +392,7 @@ button12521.bOverEnabled = true;
 button12521.bDownEnabled = true;
 button12521.build()
 
-image12503 = new ObjImage('image12503','images/litchen_background.png','Kitchen background',0,2,1280,719,1,2,'div',null, 0 )
+image12503 = new ObjImage('image12503','images/litchen_background.png','Kitchen background',0,2,1280,719,1,3,'div',null, 0 )
 image12503.initRotateAngle(0,0,0,0,0,0,0)
 image12503.initHasShadow(0)
 image12503.initHasReflection(0)
@@ -385,7 +402,7 @@ image12503.addBorder(0)
 image12503.addOpacity(100)
 image12503.build()
 
-image12505 = new ObjImage('image12505','images/recipe_cardcrop_image9621.png','Recipe card',51,107,858,462,1,3,'div',null, 0 )
+image12505 = new ObjImage('image12505','images/recipe_cardcrop_image9621.png','Recipe card',51,107,858,462,1,4,'div',null, 0 )
 image12505.initRotateAngle(0,0,0,0,0,0,0)
 image12505.initHasShadow(0)
 image12505.initHasReflection(0)
@@ -401,7 +418,7 @@ og12506.addChild('image12508')
 og12506.addChild('text12509')
 og12506.build()
 
-image12508 = new ObjImage('image12508','images/knifecrop_image9630.png','knife',534,61,224,211,1,4,'div',null, 0 )
+image12508 = new ObjImage('image12508','images/knifecrop_image9630.png','knife',534,61,224,211,1,5,'div',null, 0 )
 image12508.initRotateAngle(44,0,0,0,0,0,0)
 image12508.initHasShadow(0)
 image12508.initHasReflection(0)
@@ -411,7 +428,7 @@ image12508.addBorder(0)
 image12508.addOpacity(100)
 image12508.build()
 
-text12509 = new ObjText('text12509',null,635,161,93,23,1,5,null,'div',null,0 )
+text12509 = new ObjText('text12509',null,635,161,93,23,1,6,null,'div',null,0 )
 text12509.initSLine(1)
 text12509.initHasBullet(0)
 text12509.initRotateAngle(0,0,0)
@@ -429,7 +446,7 @@ text12509.arrCSSStyles.push('span.text12509Font2 { font-size:16px; font-family:"
 text12509.addInnerText('<div id=\"text12509\" aria-live=\"off\"  ><p lang=\"en\"  legLH=\"1.409\" style=\"margin-left:0px;text-indent:0px;line-height:1.350;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text12509Font1\" style=\"position:relative;top:-2px;\" >Evaluate</span ><span class=\"text12509Font2\" style=\"background-color:transparentposition:relative;top:-2px;\" >\n</span ></p ></div>\n');
 text12509.build()
 
-text12510 = new ObjText('text12510',null,87,213,787,168,1,6,null,'div',null,0 )
+text12510 = new ObjText('text12510',null,87,213,787,168,1,7,null,'div',null,0 )
 text12510.initSLine(0)
 text12510.initHasBullet(0)
 text12510.initRotateAngle(0,0,0)
@@ -446,7 +463,7 @@ text12510.arrCSSStyles.push('span.text12510Font1 { font-size:15px; font-family:"
 text12510.addInnerText('<div id=\"text12510\" aria-live=\"off\"  ><p lang=\"en\"  legLH=\"1.419\" style=\"margin-left:0px;text-indent:0px;line-height:1.312;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text12510Font1\" style=\"position:relative;top:-1px;\" >The Evaluate level involves making judgments based on defined criteria and standards. At this stage, learners critically assess the quality, credibility, or effectiveness of ideas, processes, or solutions. This includes checking for inconsistencies, comparing alternatives, justifying choices, and critiquing outcomes. Effective learning activities might involve analyzing case studies, assessing reports, ranking options, or defending a position in group discussions. Learners are expected to draw on their prior understanding to apply logical reasoning, evaluate evidence, and form well-supported conclusions. This level deepens critical thinking by requiring learners not just to analyze, but to take a stance and justify it.\n</span ></p >\n<p  legLH=\"1.419\" style=\"margin-left:0px;text-indent:0px;line-height:1.312;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text12510Font1\" style=\"background-color:transparentposition:relative;top:-1px;\" >\n&nbsp;</span ></p >\n<p  legLH=\"1.419\" style=\"margin-left:0px;text-indent:0px;line-height:1.312;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text12510Font1\" style=\"position:relative;top:-1px;\" >The appropriate learning outcome verbs for this level include:\n</span ></p ></div>\n');
 text12510.build()
 
-text12511 = new ObjText('text12511',null,196,412,184,127,1,7,null,'div',null,0 )
+text12511 = new ObjText('text12511',null,196,412,184,127,1,8,null,'div',null,0 )
 text12511.initSLine(0)
 text12511.initHasBullet(0)
 text12511.initRotateAngle(0,0,0)
@@ -463,23 +480,7 @@ text12511.arrCSSStyles.push('span.text12511Font1 { font-size:15px; font-family:"
 text12511.addInnerText('<div id=\"text12511\" aria-live=\"off\"  ><table style=\"border-collapse:collapse; border-spacing:0\" >\n<tr style=\"vertical-align:top\"  >\n<td  style=\"width:100px;height:129px; padding-left:4px;padding-right:4px;padding-bottom:0px;padding-top:0px;vertical-align:top;\" >\n<p lang=\"en\"  legLH=\"1.419\" style=\"margin-left:0px;text-indent:0px;line-height:1.312;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text12511Font1\" style=\"position:relative;top:-1px;\" >Evaluate</span ></p >\n<p  legLH=\"1.419\" style=\"margin-left:0px;text-indent:0px;line-height:1.312;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text12511Font1\" style=\"position:relative;top:-1px;\" >Judge</span ></p >\n<p  legLH=\"1.419\" style=\"margin-left:0px;text-indent:0px;line-height:1.312;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text12511Font1\" style=\"position:relative;top:-1px;\" >Critique</span ></p >\n<p  legLH=\"1.419\" style=\"margin-left:0px;text-indent:0px;line-height:1.312;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text12511Font1\" style=\"position:relative;top:-1px;\" >Justify</span ></p >\n<p  legLH=\"1.419\" style=\"margin-left:0px;text-indent:0px;line-height:1.312;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text12511Font1\" style=\"position:relative;top:-1px;\" >Recommend</span ></p >\n<span style=\"line-height:2px;\">&nbsp;</span >\n</td >\n<td  style=\"width:84px;height:129px; padding-left:4px;padding-right:4px;padding-bottom:0px;padding-top:0px;vertical-align:top;\" >\n<p  legLH=\"1.419\" style=\"margin-left:0px;text-indent:0px;line-height:1.312;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text12511Font1\" style=\"position:relative;top:-1px;\" >Argue</span ></p >\n<p  legLH=\"1.419\" style=\"margin-left:0px;text-indent:0px;line-height:1.312;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text12511Font1\" style=\"position:relative;top:-1px;\" >Support</span ></p >\n<p  legLH=\"1.419\" style=\"margin-left:0px;text-indent:0px;line-height:1.312;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text12511Font1\" style=\"position:relative;top:-1px;\" >Assess</span ></p >\n<p  legLH=\"1.419\" style=\"margin-left:0px;text-indent:0px;line-height:1.312;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text12511Font1\" style=\"position:relative;top:-1px;\" >Rate</span ></p >\n<p  legLH=\"1.419\" style=\"margin-left:0px;text-indent:0px;line-height:1.312;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text12511Font1\" style=\"position:relative;top:-1px;\" >Defend</span ></p >\n<p  legLH=\"1.419\" style=\"margin-left:0px;text-indent:0px;line-height:1.312;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text12511Font1\" style=\"position:relative;top:-1px;\" >Prioritize</span ></p >\n</td >\n</tr >\n</table ></div>\n');
 text12511.build()
 
-shape12513 = new ObjImage('shape12513','images/shape12513.png','Triangle Right',827,440,28.000000,25.000000,1,8,'div','',0 )
-shape12513.initRotateAngle(0,0,0,-1.000000,-1.000000,26,23)
-shape12513.initHasShadow(0)
-shape12513.initHasReflection(0)
-shape12513.setUniqueFillID('page12501_shape12513')
-shape12513.addIe8Attr(827.000000, 440.000000, 28.000000, 25.000000, 0, 0)
-shape12513.initImageMap(1,'27,12,1,24,1,1,27,12','M 27.000000 12.000000 L 1.000000 24.000000 L 1.000000 1.000000 L 27.000000 12.000000 z', '', 'stroke:#010000; stroke-width:1; stroke-linejoin:round;stroke-dasharray: none; fill:#21314D;"' , '')
-shape12513.setUseSvgFile(1)
-shape12513.addBorder(0)
-shape12513.initLineWeight(1)
-shape12513.addOpacity(100)
-shape12513.onUp = shape12513onUp
-shape12513.hasOnUp = true
-shape12513.actionShow = shape12513actionShow
-shape12513.capture=4
-shape12513.build()
-
+arObjs.push(shape12513);
 arObjs.push(button12521);
 arObjs.push(image12503);
 arObjs.push(image12505);
@@ -488,7 +489,6 @@ arObjs.push(image12508);
 arObjs.push(text12509);
 arObjs.push(text12510);
 arObjs.push(text12511);
-arObjs.push(shape12513);
 
 
 writeStyleSheets(arObjs);}
@@ -515,6 +515,7 @@ if( is.min ){
 
 <script>
 if( is.min ){
+    appendElement(shape12513, null, null);
     appendElement(button12521, null, null);
     appendElement(image12503, null, null);
     appendElement(image12505, null, null);
@@ -522,7 +523,6 @@ if( is.min ){
     appendElement(text12509, null, null);
     appendElement(text12510, null, null);
     appendElement(text12511, null, null);
-    appendElement(shape12513, null, null);
 }
 </script>
 

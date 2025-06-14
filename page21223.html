@@ -13,6 +13,10 @@
 <link rel="stylesheet" href="trivantis.css" type="text/css"/>
 
 <link rel="stylesheet" href="trivantis-focus.css" type="text/css"/>
+
+<link rel="stylesheet" href="trivantis-player.css" type="text/css"/>
+
+<link rel="stylesheet" href="speed.css" type="text/css"/>
 <style type="text/css">
   .trivInputLL { margin : 0px 0px 0px 9px; padding : 0px; display : inline-block; vertical-align : middle; }
   .trivInputLR { margin : 0px 9px 0px 3px; padding : 0px; display : inline-block; vertical-align : middle; }
@@ -28,6 +32,10 @@
 <script src="trivantis-image.js"></script>
 <script src="trivantis-inline.js"></script>
 <script src="trivantis-text.js"></script>
+<script src="mediaelement-and-player.js"></script>
+<script src="trivantis-media.js"></script>
+<script src="speed.js"></script>
+<script src="trivantis-trans.js"></script>
 <script src="trivantis-pagetracking.js"></script>
 <script src="trivantis-buttontracking.js"></script>
 <script src="device_desktop/page21223.js"></script>
@@ -54,6 +62,7 @@ var bScaleToWindow = false;
 var bFitToWidth = false;
 var bFitToMobile = true;
 var iScaleMaxWidth = 0;
+window.bAutoStartOnPage = true;
 var lTimelineStart  = -1;
 var lTimelineFinish  = 60000;
 var pageHeight = 662;
@@ -179,35 +188,41 @@ function responsiveInit() {
 
 function init() {
   lectoraPreInit();
-  init11();
+  enableAutoStart(init11);
 }
 
 function init11() {
   findWH()
   if( is.min ){
     trivPageTracking.InitPageTracking();
-    PreloadResources(new Array(button21943,image21225,shape22489,text22504,image21274,shape21558,text21587,shape21251,shape21855,text21910))
+    PreloadResources(new Array(shape21251,button21943,image21225,image21274,shape21558,text21587,audio29882,shape21855,text21910,audio29904,shape22489,text22504,audio30008))
     pageLayer.show(true);
+    shape21251.init()
     button21943.init()
     image21225.init()
-    shape22489.init()
-    text22504.init()
     image21274.init()
     shape21558.init()
     text21587.init()
-    shape21251.init()
+    audio29882.init()
     shape21855.init()
     text21910.init()
+    audio29904.init()
+    shape22489.init()
+    text22504.init()
+    audio30008.init()
+    shape21251.activate()
     button21943.activate()
     image21225.activate()
-    shape22489.activate()
-    text22504.activate()
     image21274.activate()
     shape21558.activate()
     text21587.activate()
-    shape21251.activate()
+    audio29882.activate()
     shape21855.activate()
     text21910.activate()
+    audio29904.activate()
+    shape22489.activate()
+    text22504.activate()
+    audio30008.activate()
 button21943.strCookieState = (trivBtnTracking.GetRangeStatus(21943,true));
 button21943.loadStateFromSes("normalState");
 		    try{
@@ -320,24 +335,8 @@ function OnDeviceRotate() {
 
 }
 
-function action21950(fn){
-    {cleanupTitle('buildbettertraining'); trivExitPage('ObjLayerActionExit()',false);} 
-    if(fn && typeof(fn) == 'string' ) eval(fn);
-    else if(fn && typeof(fn) == 'function' ) fn();
-}
-
-function button21943onUp() {
-  action21950();
-}
-
 function action21252(fn){
     text21587.actionHide(); 
-    if(fn && typeof(fn) == 'string' ) eval(fn);
-    else if(fn && typeof(fn) == 'function' ) fn();
-}
-
-function action22445(fn){
-    button21943.actionShow(); 
     if(fn && typeof(fn) == 'string' ) eval(fn);
     else if(fn && typeof(fn) == 'function' ) fn();
 }
@@ -360,12 +359,130 @@ function action22383(fn){
     else if(fn && typeof(fn) == 'function' ) fn();
 }
 
+function action29932(fn){
+    audio29904.actionPlay(); 
+    if(fn && typeof(fn) == 'string' ) eval(fn);
+    else if(fn && typeof(fn) == 'function' ) fn();
+}
+
 function shape21251onUp() {
-  action21252();action22445();action22377();action22380();action22383();
+  action21252();action22377();action22380();action22383();action29932();
+}
+
+function action21950(fn){
+    {cleanupTitle('buildbettertraining'); trivExitPage('ObjLayerActionExit()',false);} 
+    if(fn && typeof(fn) == 'string' ) eval(fn);
+    else if(fn && typeof(fn) == 'function' ) fn();
+}
+
+function button21943onUp() {
+  action21950();
+}
+
+function audio29882evEvent_1(fn){
+    shape21251.actionShow(); 
+    if(fn && typeof(fn) == 'string' ) eval(fn);
+    else if(fn && typeof(fn) == 'function' ) fn();
+}
+
+function audio29882onSelChg(evt,name,i) {
+  if(name=='Event 1') audio29882evEvent_1(); 
+}
+
+function audio29904evEvent_2(fn){
+    shape21251.actionHide(); 
+    if(fn && typeof(fn) == 'string' ) eval(fn);
+    else if(fn && typeof(fn) == 'function' ) fn();
+}
+
+function audio29904evEvent_4(fn){
+    text22504.actionShow(); 
+    if(fn && typeof(fn) == 'string' ) eval(fn);
+    else if(fn && typeof(fn) == 'function' ) fn();
+}
+
+function audio29904evEvent_3(fn){
+    shape22489.actionShow(); 
+    if(fn && typeof(fn) == 'string' ) eval(fn);
+    else if(fn && typeof(fn) == 'function' ) fn();
+}
+
+function audio29904evEvent_1(fn){
+    audio30008.actionPlay(); 
+    if(fn && typeof(fn) == 'string' ) eval(fn);
+    else if(fn && typeof(fn) == 'function' ) fn();
+}
+
+function audio29904onSelChg(evt,name,i) {
+  if(name=='Event 2') audio29904evEvent_2(); if(name=='Event 4') audio29904evEvent_4(); if(name=='Event 3') audio29904evEvent_3(); if(name=='Event 1') audio29904evEvent_1(); 
+}
+
+function shape22489actionShow() {
+  setTimeout("if(!shape22489.isVisible()) { shape22489.objLyr.doTrans( 0, 33, 4, null, shape22489.objLyr.x, shape22489.objLyr.y, -276, -386, winW+20, winH+20, 0, -1, 0 ); }", 1 )
+}
+
+function text22504actionShow() {
+  setTimeout("if(!text22504.isVisible()) { text22504.objLyr.doTrans( 0, 33, 4, null, text22504.objLyr.x, text22504.objLyr.y, -267, -392, winW+20, winH+20, 0, -1, 1 ); }", 1 )
+}
+
+function audio30008evEvent_1(fn){
+    button21943.actionShow(); 
+    if(fn && typeof(fn) == 'string' ) eval(fn);
+    else if(fn && typeof(fn) == 'function' ) fn();
+}
+
+function action30178(fn){
+    shape22489.actionShow(); 
+    if(fn && typeof(fn) == 'string' ) eval(fn);
+    else if(fn && typeof(fn) == 'function' ) fn();
+}
+
+function action30183(fn){
+    text22504.actionShow(); 
+    if(fn && typeof(fn) == 'string' ) eval(fn);
+    else if(fn && typeof(fn) == 'function' ) fn();
+}
+
+function audio30008actionShow() {
+  setTimeout("if(!audio30008.isVisible()) { audio30008.objLyr.moveTo(audio30008.x, audio30008.y);audio30008.onShow();action30178();action30183(); }", 1 )
+}
+
+function audio30008onSelChg(evt,name,i) {
+  if(name=='Event 1') audio30008evEvent_1(); 
+}
+
+function updateFLVPlayer(bMute){
+  if(typeof bMute === 'undefined') { 
+    if(typeof VarTriMuteAllFLV !=='undefined') bMute = (VarTriMuteAllFLV.getValue()=='1')
+    else bMute = false
+  }
+  var pIdArr = new Array(audio29882,audio29904,audio30008)
+  for (i=0;i<pIdArr.length;i++) setPlayerMute(pIdArr[i], bMute);
+}
+
+function setPlayerMute(plrObj, bMute){
+  if( bMute) plrObj.actionMute();
+  else plrObj.actionUnmute();
 }
 
 if( is.min ){
-button21943 = new ObjButton('button21943', 'End',395,174,82.000000,35.000000,0,21,'div','',1,0)
+shape21251 = new ObjImage('shape21251','images/shape21251.png','Triangle Right',555,116,27.000000,28.000000,0,24,'div','',0 )
+shape21251.initRotateAngle(0,0,0,-1.000000,-1.000000,25,26)
+shape21251.initHasShadow(0)
+shape21251.initHasReflection(0)
+shape21251.setUniqueFillID('page21223_shape21251')
+shape21251.addIe8Attr(555.000000, 116.000000, 27.000000, 28.000000, 0, 0)
+shape21251.initImageMap(1,'26,14,1,27,1,1,26,14','M 26.000000 14.000000 L 1.000000 27.000000 L 1.000000 1.000000 L 26.000000 14.000000 z', '', 'stroke:#010000; stroke-width:1; stroke-linejoin:round;stroke-dasharray: none; fill:#21314D;"' , '')
+shape21251.setUseSvgFile(1)
+shape21251.addBorder(0)
+shape21251.initLineWeight(1)
+shape21251.addOpacity(100)
+shape21251.onUp = shape21251onUp
+shape21251.hasOnUp = true
+shape21251.capture=4
+shape21251.build()
+
+button21943 = new ObjButton('button21943', 'End',395,174,82.000000,35.000000,0,25,'div','',1,0)
 button21943.setUseSvgFile(1)
 button21943.setFillStyle(1)
 button21943.setUniqueFillID('page21223_button21943')
@@ -390,7 +507,7 @@ button21943.bOverEnabled = true;
 button21943.bDownEnabled = true;
 button21943.build()
 
-image21225 = new ObjImage('image21225','images/litchen_background.png','litchen background',-25,-70,1009,567,1,2,'div',null, 0 )
+image21225 = new ObjImage('image21225','images/litchen_background.png','litchen background',-25,-70,1009,567,1,3,'div',null, 0 )
 image21225.initRotateAngle(0,0,0,0,0,0,0)
 image21225.initHasShadow(0)
 image21225.initHasReflection(0)
@@ -400,40 +517,7 @@ image21225.addBorder(0)
 image21225.addOpacity(100)
 image21225.build()
 
-shape22489 = new ObjImage('shape22489','images/shape22489.png','Rectangle',650,35,258.000000,368.000000,1,3,'div','',0 )
-shape22489.initRotateAngle(0,0,0,-1.000000,-1.000000,256,366)
-shape22489.initHasShadow(0)
-shape22489.initHasReflection(0)
-shape22489.setUniqueFillID('page21223_shape22489')
-shape22489.addIe8Attr(650.000000, 35.000000, 258.000000, 368.000000, 0, 0)
-shape22489.initImageMap(1,'1,1,257,1,257,367,1,367,1,1','M 1.000000 1.000000 L 257.000000 1.000000 L 257.000000 367.000000 L 1.000000 367.000000 L 1.000000 1.000000 z', '', 'stroke:#010000; stroke-width:1; stroke-linejoin:round;stroke-dasharray: none; fill:#FFFFFF;"' , '')
-shape22489.setUseSvgFile(1)
-shape22489.addBorder(0)
-shape22489.initLineWeight(1)
-shape22489.addOpacity(100)
-shape22489.build()
-
-text22504 = new ObjText('text22504',null,660,42,247,372,1,4,null,'div',null,0 )
-text22504.initSLine(0)
-text22504.initHasBullet(1)
-text22504.initRotateAngle(0,0,0)
-text22504.initHasOuterShadow(0)
-text22504.initHasTextShadow(0)
-text22504.initHasBorder(0)
-text22504.initHasOutline(0)
-text22504.initHasMargin(0)
-text22504.addIe8Attr(660, 42, 247, 372, 0, 0)
-text22504.addHeading(0)
-text22504.addOpacity(100)
-text22504.arrCSSStyles = new Array();
-text22504.arrCSSStyles.push('span.text22504Font1 { font-size:16px; font-family:"Arial", sans-serif; color:#21314d; font-weight:bold; font-style:normal; text-decoration:normal;}');
-text22504.arrCSSStyles.push('li.text22504Font1 { font-size:16px; font-family:"Arial", sans-serif; color:#21314d; font-weight:bold; font-style:normal; text-decoration:normal;}');
-text22504.arrCSSStyles.push('span.text22504Font2 { font-size:16px; font-family:"Arial", sans-serif; color:#21314d; font-weight:normal; font-style:normal; text-decoration:normal;}');
-text22504.arrCSSStyles.push('li.text22504Font2 { font-size:16px; font-family:"Arial", sans-serif; color:#21314d; font-weight:normal; font-style:normal; text-decoration:normal;}');
-text22504.addInnerText('<div id=\"text22504\" aria-live=\"off\"  ><p lang=\"en\"  legLH=\"1.409\" style=\"margin-left:0px;text-indent:0px;line-height:1.350;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text22504Font1\" style=\"position:relative;top:-2px;\" >In this course you have: </span ><span class=\"text22504Font2\" style=\"background-color:transparentposition:relative;top:-2px;\" >\n</span ></p >\n<ul  style=\"list-style-position:outside;text-align:left;\" >\n<li  class=\"text22504Font2\" data-bltIndnt=\"0\" style=\"line-height:1.409;position:relative;margin-left:15px;margin-top:0px;margin-bottom:0px; list-style-image:url(\'images/text22504CircleBulletFont7.png\'); padding-left:8px;\"><!--{ \ndata-bltIndnt:0\n} --><span class=\"text22504Font2\"  >Identified real-world training needs by analyzing and categorizing tasks using Bloom\'s Taxonomy.\n</span ></li >\n<li  class=\"text22504Font2\" data-bltIndnt=\"0\" style=\"line-height:1.409;position:relative;margin-left:15px;margin-top:0px;margin-bottom:0px; list-style-image:url(\'images/text22504CircleBulletFont7.png\'); padding-left:8px;\"><!--{ \ndata-bltIndnt:0\n} --><span class=\"text22504Font2\"  >Developed clear learning objectives aligned to specific cognitive levels.\n</span ></li >\n<li  class=\"text22504Font2\" data-bltIndnt=\"0\" style=\"line-height:1.409;position:relative;margin-left:15px;margin-top:0px;margin-bottom:0px; list-style-image:url(\'images/text22504CircleBulletFont7.png\'); padding-left:8px;\"><!--{ \ndata-bltIndnt:0\n} --><span class=\"text22504Font2\"  >Designed workplace activities that engage learners across multiple levels of thinking.\n</span ></li >\n<li  class=\"text22504Font2\" data-bltIndnt=\"0\" style=\"line-height:1.409;position:relative;margin-left:15px;margin-top:0px;margin-bottom:0px; list-style-image:url(\'images/text22504CircleBulletFont7.png\'); padding-left:8px;\"><!--{ \ndata-bltIndnt:0\n} --><span class=\"text22504Font2\"  >Evaluated training strategies to ensure they foster learning, skill application, and independent problem-solving\n</span ></li >\n</ul ></div>\n');
-text22504.build()
-
-image21274 = new ObjImage('image21274','images/3crop_image21274.png','3',112,12,180,331,1,5,'div',null, 0 )
+image21274 = new ObjImage('image21274','images/3crop_image21274.png','3',112,12,180,331,1,4,'div',null, 0 )
 image21274.initRotateAngle(0,0,0,0,0,0,0)
 image21274.initHasShadow(0)
 image21274.initHasReflection(0)
@@ -443,20 +527,20 @@ image21274.addBorder(0)
 image21274.addOpacity(100)
 image21274.build()
 
-shape21558 = new ObjImage('shape21558','images/shape21558.png','Callout Ellipse',270,23,330.000000,190.000000,1,6,'div','',0 )
-shape21558.initRotateAngle(0,0,0,-1.000000,0.000000,329,188)
+shape21558 = new ObjImage('shape21558','images/shape21558.png','Callout Ellipse',270,12,338.000000,210.000000,1,5,'div','',0 )
+shape21558.initRotateAngle(0,0,0,-1.000000,0.000000,336,209)
 shape21558.initHasShadow(0)
 shape21558.initHasReflection(0)
 shape21558.setUniqueFillID('page21223_shape21558')
-shape21558.addIe8Attr(270.000000, 23.000000, 330.000000, 190.000000, 0, 0)
-shape21558.initImageMap(1,'74,172,88,177,101,181,116,184,130,186,145,187,160,188,175,188,189,187,204,185,218,183,232,180,245,176,258,172,270,166,281,160,292,154,301,146,309,139,316,131,321,123,325,115,328,106,329,98,329,89,327,81,325,73,321,64,315,56,309,49,301,41,291,34,281,27,269,21,257,16,244,12,230,8,216,5,202,2,188,1,173,0,158,0,143,1,129,2,114,5,100,8,87,12,73,16,61,21,49,27,39,34,30,41,22,48,15,56,10,64,6,72,3,80,1,89,1,97,2,106,5,114,9,123,14,131,21,139,29,146,1,188,74,172','M 74.125000 172.250000 L 87.562500 176.875000 L 101.437500 180.687500 L 115.687500 183.687500 L 130.250000 185.937500 L 145.000000 187.312500 L 159.812500 188.000000 L 174.625000 187.875000 L 189.312500 187.000000 L 203.875000 185.375000 L 218.062500 183.000000 L 231.875000 179.875000 L 245.250000 176.062500 L 258.000000 171.500000 L 270.125000 166.187500 L 281.437500 160.250000 L 291.937500 153.562500 L 301.250000 146.375000 L 309.250000 138.812500 L 315.875000 130.937500 L 321.125000 122.875000 L 325.062500 114.625000 L 327.625000 106.187500 L 328.875000 97.750000 L 328.812500 89.250000 L 327.437500 80.812500 L 324.687500 72.500000 L 320.625000 64.312500 L 315.250000 56.312500 L 308.625000 48.562500 L 300.625000 41.125000 L 291.375000 34.062500 L 280.812500 27.437500 L 269.187500 21.437500 L 256.875000 16.125000 L 243.875000 11.562500 L 230.375000 7.812500 L 216.437500 4.750000 L 202.125000 2.437500 L 187.562500 0.937500 L 172.812500 0.125000 L 158.062500 0.125000 L 143.312500 0.875000 L 128.687500 2.375000 L 114.250000 4.625000 L 100.187500 7.687500 L 86.500000 11.500000 L 73.375000 16.062500 L 60.812500 21.437500 L 49.187500 27.437500 L 38.812500 34.000000 L 29.625000 40.937500 L 21.750000 48.250000 L 15.062500 55.937500 L 9.687500 63.875000 L 5.562500 72.062500 L 2.750000 80.375000 L 1.250000 88.812500 L 1.125000 97.312500 L 2.312500 105.812500 L 4.812500 114.250000 L 8.750000 122.562500 L 14.000000 130.750000 L 20.687500 138.687500 L 28.812500 146.375000 L 1.000000 188.000000 L 74.125000 172.250000 z', '', 'stroke:#010000; stroke-width:1; stroke-linejoin:round;stroke-dasharray: none; fill:#FFFFFF;"' , '')
+shape21558.addIe8Attr(270.000000, 12.000000, 338.000000, 210.000000, 0, 0)
+shape21558.initImageMap(1,'75,190,89,196,103,200,118,203,133,206,148,207,163,208,178,208,193,207,208,205,223,203,237,199,251,195,264,190,276,184,288,178,299,170,308,162,316,154,323,145,329,136,333,127,336,118,337,109,337,99,335,90,333,81,329,72,323,63,316,54,308,46,299,38,288,31,276,24,264,18,250,13,237,9,222,5,208,3,193,1,178,0,163,0,147,1,132,3,118,5,103,8,89,13,76,18,63,24,51,30,40,37,31,45,23,53,16,62,10,70,6,79,3,89,1,98,1,107,2,117,5,126,9,135,14,144,21,153,29,162,1,208,75,190','M 75.375000 190.375000 L 89.062500 195.500000 L 103.312500 199.750000 L 117.875000 203.125000 L 132.750000 205.625000 L 147.875000 207.187500 L 163.000000 207.937500 L 178.187500 207.875000 L 193.250000 206.937500 L 208.187500 205.187500 L 222.750000 202.562500 L 236.937500 199.125000 L 250.625000 194.937500 L 263.750000 189.937500 L 276.187500 184.125000 L 287.875000 177.562500 L 298.625000 170.187500 L 308.250000 162.250000 L 316.437500 153.875000 L 323.312500 145.250000 L 328.750000 136.312500 L 332.812500 127.187500 L 335.562500 117.937500 L 336.875000 108.562500 L 336.875000 99.187500 L 335.437500 89.812500 L 332.750000 80.562500 L 328.625000 71.500000 L 323.187500 62.687500 L 316.437500 54.062500 L 308.312500 45.875000 L 298.875000 38.062500 L 288.125000 30.687500 L 276.250000 24.000000 L 263.687500 18.125000 L 250.437500 13.062500 L 236.562500 8.812500 L 222.312500 5.375000 L 207.687500 2.812500 L 192.750000 1.062500 L 177.687500 0.187500 L 162.500000 0.125000 L 147.375000 0.875000 L 132.375000 2.500000 L 117.625000 5.000000 L 103.187500 8.312500 L 89.125000 12.500000 L 75.625000 17.562500 L 62.750000 23.500000 L 50.812500 30.125000 L 40.125000 37.312500 L 30.687500 45.000000 L 22.562500 53.062500 L 15.687500 61.562500 L 10.062500 70.312500 L 5.812500 79.312500 L 2.875000 88.500000 L 1.312500 97.875000 L 1.125000 107.250000 L 2.250000 116.625000 L 4.812500 126.000000 L 8.750000 135.250000 L 14.125000 144.312500 L 20.875000 153.125000 L 29.125000 161.625000 L 1.000000 208.000000 L 75.375000 190.375000 z', '', 'stroke:#010000; stroke-width:1; stroke-linejoin:round;stroke-dasharray: none; fill:#FFFFFF;"' , '')
 shape21558.setUseSvgFile(1)
 shape21558.addBorder(0)
 shape21558.initLineWeight(1)
 shape21558.addOpacity(100)
 shape21558.build()
 
-text21587 = new ObjText('text21587',null,318,53,250,144,1,7,null,'div',null,0 )
+text21587 = new ObjText('text21587',null,318,53,250,162,1,6,null,'div',null,0 )
 text21587.initSLine(0)
 text21587.initHasBullet(0)
 text21587.initRotateAngle(0,0,0)
@@ -465,7 +549,7 @@ text21587.initHasTextShadow(0)
 text21587.initHasBorder(0)
 text21587.initHasOutline(0)
 text21587.initHasMargin(0)
-text21587.addIe8Attr(318, 53, 250, 144, 0, 0)
+text21587.addIe8Attr(318, 53, 250, 162, 0, 0)
 text21587.addHeading(0)
 text21587.addOpacity(100)
 text21587.arrCSSStyles = new Array();
@@ -473,23 +557,14 @@ text21587.arrCSSStyles.push('span.text21587Font1 { font-size:16px; font-family:"
 text21587.addInnerText('<div id=\"text21587\" aria-live=\"off\"  ><p lang=\"en\"  legLH=\"1.409\" style=\"margin-left:0px;text-indent:0px;line-height:1.350;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text21587Font1\" style=\"position:relative;top:-2px;\" >Congratulations, Chef-in-Training! You\'ve completed your journey through The Training Kitchen, mastering the key ingredients needed to design effective, skill-building workplace training.\n</span ></p ></div>\n');
 text21587.build()
 
-shape21251 = new ObjImage('shape21251','images/shape21251.png','Triangle Right',555,116,27.000000,28.000000,1,8,'div','',0 )
-shape21251.initRotateAngle(0,0,0,-1.000000,-1.000000,25,26)
-shape21251.initHasShadow(0)
-shape21251.initHasReflection(0)
-shape21251.setUniqueFillID('page21223_shape21251')
-shape21251.addIe8Attr(555.000000, 116.000000, 27.000000, 28.000000, 0, 0)
-shape21251.initImageMap(1,'26,14,1,27,1,1,26,14','M 26.000000 14.000000 L 1.000000 27.000000 L 1.000000 1.000000 L 26.000000 14.000000 z', '', 'stroke:#010000; stroke-width:1; stroke-linejoin:round;stroke-dasharray: none; fill:#21314D;"' , '')
-shape21251.setUseSvgFile(1)
-shape21251.addBorder(0)
-shape21251.initLineWeight(1)
-shape21251.addOpacity(100)
-shape21251.onUp = shape21251onUp
-shape21251.hasOnUp = true
-shape21251.capture=4
-shape21251.build()
+audio29882 = new ObjMedia('audio29882','Congrats1',327,202,1,1,0,7,'media/congrats1.mp3',0,1,0,0,1,0.800000,0,'div',0);
+audio29882.bNeedPool = true;
+audio29882.bSpeedControl = true;
+audio29882.BuildMediaString()
+audio29882.build()
 
-shape21855 = new ObjImage('shape21855','images/shape21855.png','Callout Ellipse2',270,23,330.000000,198.000000,0,9,'div','',0 )
+audio29882.addEvent('10.00', 'audio29882evEvent_1')
+shape21855 = new ObjImage('shape21855','images/shape21855.png','Callout Ellipse2',270,23,330.000000,198.000000,0,8,'div','',0 )
 shape21855.initRotateAngle(0,0,0,-1.000000,0.000000,329,196)
 shape21855.initHasShadow(0)
 shape21855.initHasReflection(0)
@@ -502,7 +577,7 @@ shape21855.initLineWeight(1)
 shape21855.addOpacity(100)
 shape21855.build()
 
-text21910 = new ObjText('text21910',null,318,53,250,115,0,10,null,'div',null,0 )
+text21910 = new ObjText('text21910',null,318,53,250,139,0,9,null,'div',null,0 )
 text21910.initSLine(0)
 text21910.initHasBullet(0)
 text21910.initRotateAngle(0,0,0)
@@ -511,7 +586,7 @@ text21910.initHasTextShadow(0)
 text21910.initHasBorder(0)
 text21910.initHasOutline(0)
 text21910.initHasMargin(0)
-text21910.addIe8Attr(318, 53, 250, 115, 0, 0)
+text21910.addIe8Attr(318, 53, 250, 139, 0, 0)
 text21910.addHeading(0)
 text21910.addOpacity(100)
 text21910.arrCSSStyles = new Array();
@@ -519,16 +594,71 @@ text21910.arrCSSStyles.push('span.text21910Font1 { font-size:16px; font-family:"
 text21910.addInnerText('<div id=\"text21910\" aria-live=\"off\"  ><p lang=\"en\"  legLH=\"1.409\" style=\"margin-left:0px;text-indent:0px;line-height:1.350;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text21910Font1\" style=\"position:relative;top:-2px;\" >With a full pantry and sharpened tools, you\'re ready to create structured, purposeful training that helps learners not just memorize, but think, apply, and grow.\n</span ></p ></div>\n');
 text21910.build()
 
+audio29904 = new ObjMedia('audio29904','Congrats 2',327,202,1,1,0,10,'media/congrats_2.mp3',0,0,0,0,1,0.800000,0,'div',0);
+audio29904.bSpeedControl = true;
+audio29904.BuildMediaString()
+audio29904.build()
+
+audio29904.addEvent('0.00', 'audio29904evEvent_2')
+audio29904.addEvent('9.00', 'audio29904evEvent_4')
+audio29904.addEvent('9.00', 'audio29904evEvent_3')
+audio29904.addEvent('9.02', 'audio29904evEvent_1')
+shape22489 = new ObjImage('shape22489','images/shape22489.png','Rectangle',650,35,258.000000,368.000000,0,11,'div','',0 )
+shape22489.initRotateAngle(0,0,0,-1.000000,-1.000000,256,366)
+shape22489.initHasShadow(0)
+shape22489.initHasReflection(0)
+shape22489.setUniqueFillID('page21223_shape22489')
+shape22489.addIe8Attr(650.000000, 35.000000, 258.000000, 368.000000, 0, 0)
+shape22489.initImageMap(1,'1,1,257,1,257,367,1,367,1,1','M 1.000000 1.000000 L 257.000000 1.000000 L 257.000000 367.000000 L 1.000000 367.000000 L 1.000000 1.000000 z', '', 'stroke:#010000; stroke-width:1; stroke-linejoin:round;stroke-dasharray: none; fill:#FFFFFF;"' , '')
+shape22489.setUseSvgFile(1)
+shape22489.addBorder(0)
+shape22489.initLineWeight(1)
+shape22489.addOpacity(100)
+shape22489.actionShow = shape22489actionShow
+shape22489.build()
+
+text22504 = new ObjText('text22504',null,660,42,247,372,0,12,null,'div',null,0 )
+text22504.initSLine(0)
+text22504.initHasBullet(1)
+text22504.initRotateAngle(0,0,0)
+text22504.initHasOuterShadow(0)
+text22504.initHasTextShadow(0)
+text22504.initHasBorder(0)
+text22504.initHasOutline(0)
+text22504.initHasMargin(0)
+text22504.addIe8Attr(660, 42, 247, 372, 0, 0)
+text22504.addHeading(0)
+text22504.addOpacity(100)
+text22504.actionShow = text22504actionShow
+text22504.arrCSSStyles = new Array();
+text22504.arrCSSStyles.push('span.text22504Font1 { font-size:16px; font-family:"Arial", sans-serif; color:#21314d; font-weight:bold; font-style:normal; text-decoration:normal;}');
+text22504.arrCSSStyles.push('li.text22504Font1 { font-size:16px; font-family:"Arial", sans-serif; color:#21314d; font-weight:bold; font-style:normal; text-decoration:normal;}');
+text22504.arrCSSStyles.push('span.text22504Font2 { font-size:16px; font-family:"Arial", sans-serif; color:#21314d; font-weight:normal; font-style:normal; text-decoration:normal;}');
+text22504.arrCSSStyles.push('li.text22504Font2 { font-size:16px; font-family:"Arial", sans-serif; color:#21314d; font-weight:normal; font-style:normal; text-decoration:normal;}');
+text22504.addInnerText('<div id=\"text22504\" aria-live=\"off\"  ><p lang=\"en\"  legLH=\"1.409\" style=\"margin-left:0px;text-indent:0px;line-height:1.350;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text22504Font1\" style=\"position:relative;top:-2px;\" >In this course you have: </span ><span class=\"text22504Font2\" style=\"background-color:transparentposition:relative;top:-2px;\" >\n</span ></p >\n<ul  style=\"list-style-position:outside;text-align:left;\" >\n<li  class=\"text22504Font2\" data-bltIndnt=\"0\" style=\"line-height:1.409;position:relative;margin-left:15px;margin-top:0px;margin-bottom:0px; list-style-image:url(\'images/text22504CircleBulletFont7.png\'); padding-left:8px;\"><!--{ \ndata-bltIndnt:0\n} --><span class=\"text22504Font2\"  >Identified real-world training needs by analyzing and categorizing tasks using Bloom\'s Taxonomy.\n</span ></li >\n<li  class=\"text22504Font2\" data-bltIndnt=\"0\" style=\"line-height:1.409;position:relative;margin-left:15px;margin-top:0px;margin-bottom:0px; list-style-image:url(\'images/text22504CircleBulletFont7.png\'); padding-left:8px;\"><!--{ \ndata-bltIndnt:0\n} --><span class=\"text22504Font2\"  >Developed clear learning objectives aligned to specific cognitive levels.\n</span ></li >\n<li  class=\"text22504Font2\" data-bltIndnt=\"0\" style=\"line-height:1.409;position:relative;margin-left:15px;margin-top:0px;margin-bottom:0px; list-style-image:url(\'images/text22504CircleBulletFont7.png\'); padding-left:8px;\"><!--{ \ndata-bltIndnt:0\n} --><span class=\"text22504Font2\"  >Designed workplace activities that engage learners across multiple levels of thinking.\n</span ></li >\n<li  class=\"text22504Font2\" data-bltIndnt=\"0\" style=\"line-height:1.409;position:relative;margin-left:15px;margin-top:0px;margin-bottom:0px; list-style-image:url(\'images/text22504CircleBulletFont7.png\'); padding-left:8px;\"><!--{ \ndata-bltIndnt:0\n} --><span class=\"text22504Font2\"  >Evaluated training strategies to ensure they foster learning, skill application, and independent problem-solving\n</span ></li >\n</ul ></div>\n');
+text22504.build()
+
+audio30008 = new ObjMedia('audio30008','You learned',327,202,1,1,0,13,'media/you_learned.mp3',0,0,0,0,1,0.800000,0,'div',0);
+audio30008.bNeedPool = true;
+audio30008.bSpeedControl = true;
+audio30008.BuildMediaString()
+audio30008.actionShow = audio30008actionShow
+audio30008.build()
+
+audio30008.addEvent('27.00', 'audio30008evEvent_1')
+arObjs.push(shape21251);
 arObjs.push(button21943);
 arObjs.push(image21225);
-arObjs.push(shape22489);
-arObjs.push(text22504);
 arObjs.push(image21274);
 arObjs.push(shape21558);
 arObjs.push(text21587);
-arObjs.push(shape21251);
+arObjs.push(audio29882);
 arObjs.push(shape21855);
 arObjs.push(text21910);
+arObjs.push(audio29904);
+arObjs.push(shape22489);
+arObjs.push(text22504);
+arObjs.push(audio30008);
 
 
 writeStyleSheets(arObjs);}
@@ -554,16 +684,19 @@ if( is.min ){
 
 <script>
 if( is.min ){
+    appendElement(shape21251, null, null);
     appendElement(button21943, null, null);
     appendElement(image21225, null, null);
-    appendElement(shape22489, null, null);
-    appendElement(text22504, null, null);
     appendElement(image21274, null, null);
     appendElement(shape21558, null, null);
     appendElement(text21587, null, null);
-    appendElement(shape21251, null, null);
+    appendElement(audio29882, null, null);
     appendElement(shape21855, null, null);
     appendElement(text21910, null, null);
+    appendElement(audio29904, null, null);
+    appendElement(shape22489, null, null);
+    appendElement(text22504, null, null);
+    appendElement(audio30008, null, null);
 }
 </script>
 

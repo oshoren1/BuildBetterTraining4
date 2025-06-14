@@ -194,20 +194,20 @@ function init11() {
   findWH()
   if( is.min ){
     trivPageTracking.InitPageTracking();
-    PreloadResources(new Array(button27520,image13944,shape13948,text13949,shape13955,audio14105,image15186))
+    PreloadResources(new Array(button27520,shape13955,image13944,shape13948,text13949,audio14105,image15186))
     pageLayer.show(true);
     button27520.init()
+    shape13955.init()
     image13944.init()
     shape13948.init()
     text13949.init()
-    shape13955.init()
     audio14105.init()
     image15186.init()
     button27520.activate()
+    shape13955.activate()
     image13944.activate()
     shape13948.activate()
     text13949.activate()
-    shape13955.activate()
     audio14105.activate()
     image15186.activate()
 button27520.strCookieState = (trivBtnTracking.GetRangeStatus(27520,true));
@@ -392,52 +392,12 @@ button27520.bOverEnabled = true;
 button27520.bDownEnabled = true;
 button27520.build()
 
-image13944 = new ObjImage('image13944','images/pantry.jpg','pantry',-30,-71,1009,569,1,2,'div',null, 0 )
-image13944.initRotateAngle(0,0,0,0,0,0,0)
-image13944.initHasShadow(0)
-image13944.initHasReflection(0)
-image13944.addIe8Attr(-30, -71, 1009, 569, 0, 0)
-image13944.initImageMap(1,'0,0,1009,0,1009,569,0,569,0,0','M 0 0 L 1009 0 L 1009 569 L 0 569 L 0 0 z')
-image13944.addBorder(0)
-image13944.addOpacity(100)
-image13944.build()
-
-shape13948 = new ObjImage('shape13948','images/shape13948.png','Callout Ellipse',533,51,246.000000,170.000000,1,3,'div','',0 )
-shape13948.initRotateAngle(0,0,0,-1.000000,0.000000,245,169)
-shape13948.initHasShadow(0)
-shape13948.initHasReflection(0)
-shape13948.setUniqueFillID('page13942_shape13948')
-shape13948.addIe8Attr(533.000000, 51.000000, 246.000000, 170.000000, 0, 0)
-shape13948.initImageMap(1,'55,154,65,158,75,161,86,164,97,166,108,167,119,168,130,168,141,167,152,166,162,164,173,161,182,157,192,153,201,149,209,143,217,137,224,131,230,124,235,117,239,110,242,103,244,95,245,88,245,80,244,72,242,65,239,58,235,51,230,44,224,37,217,31,209,25,201,19,192,15,182,11,172,7,162,4,151,2,140,1,129,0,118,0,107,1,96,2,86,4,75,7,65,10,55,14,46,19,37,24,29,30,23,36,17,43,12,50,8,57,5,64,2,72,1,79,1,87,2,94,4,102,7,109,11,117,16,124,22,131,1,168,55,154','M 55.125000 153.812500 L 65.125000 157.937500 L 75.437500 161.375000 L 86.062500 164.062500 L 96.875000 166.062500 L 107.812500 167.375000 L 118.875000 168.000000 L 129.875000 167.875000 L 140.812500 167.125000 L 151.625000 165.687500 L 162.187500 163.562500 L 172.500000 160.812500 L 182.437500 157.437500 L 192.000000 153.375000 L 201.000000 148.625000 L 209.437500 143.312500 L 217.250000 137.375000 L 224.250000 130.937500 L 230.187500 124.187500 L 235.125000 117.187500 L 239.062500 110.000000 L 242.000000 102.625000 L 243.937500 95.125000 L 244.937500 87.562500 L 244.875000 80.000000 L 243.875000 72.437500 L 241.875000 65.000000 L 238.875000 57.625000 L 234.937500 50.500000 L 230.000000 43.562500 L 224.062500 36.937500 L 217.187500 30.625000 L 209.375000 24.687500 L 200.750000 19.312500 L 191.625000 14.562500 L 182.000000 10.500000 L 171.937500 7.062500 L 161.562500 4.312500 L 150.937500 2.250000 L 140.062500 0.875000 L 129.125000 0.125000 L 118.125000 0.125000 L 107.125000 0.750000 L 96.250000 2.062500 L 85.562500 4.125000 L 75.062500 6.812500 L 64.875000 10.187500 L 55.062500 14.250000 L 45.750000 19.062500 L 37.062500 24.437500 L 29.312500 30.250000 L 22.500000 36.437500 L 16.562500 43.000000 L 11.625000 49.812500 L 7.562500 56.937500 L 4.500000 64.187500 L 2.375000 71.625000 L 1.250000 79.187500 L 1.062500 86.750000 L 1.937500 94.312500 L 3.750000 101.875000 L 6.625000 109.312500 L 10.562500 116.625000 L 15.500000 123.750000 L 21.500000 130.625000 L 1.000000 168.000000 L 55.125000 153.812500 z', '', 'stroke:#010000; stroke-width:1; stroke-linejoin:round;stroke-dasharray: none; fill:#FFFFFF;"' , '')
-shape13948.setUseSvgFile(1)
-shape13948.addBorder(0)
-shape13948.initLineWeight(1)
-shape13948.addOpacity(100)
-shape13948.build()
-
-text13949 = new ObjText('text13949',null,569,80,200,127,1,4,null,'div',null,0 )
-text13949.initSLine(0)
-text13949.initHasBullet(0)
-text13949.initRotateAngle(0,0,0)
-text13949.initHasOuterShadow(0)
-text13949.initHasTextShadow(0)
-text13949.initHasBorder(0)
-text13949.initHasOutline(0)
-text13949.initHasMargin(0)
-text13949.addIe8Attr(569, 80, 200, 127, 0, 0)
-text13949.addHeading(0)
-text13949.addOpacity(100)
-text13949.arrCSSStyles = new Array();
-text13949.arrCSSStyles.push('span.text13949Font1 { font-size:16px; font-family:"Arial", sans-serif; color:#010101;}');
-text13949.addInnerText('<div id=\"text13949\" aria-live=\"off\"  ><p lang=\"en\"  legLH=\"1.409\" style=\"margin-left:0px;text-indent:0px;line-height:1.350;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text13949Font1\" style=\"position:relative;top:-2px;\" >You\'ve earned Salt- the essential seasoning that starts every dish, just like remembering facts and terms are the essential foundations of all learning\n</span ></p ></div>\n');
-text13949.build()
-
-shape13955 = new ObjImage('shape13955','images/shape13955.png','Triangle Right',656,189,26.000000,25.000000,0,5,'div','',0 )
+shape13955 = new ObjImage('shape13955','images/shape13955.png','Triangle Right',656,195,26.000000,25.000000,0,19,'div','',0 )
 shape13955.initRotateAngle(0,0,0,-1.000000,-1.000000,24,23)
 shape13955.initHasShadow(0)
 shape13955.initHasReflection(0)
 shape13955.setUniqueFillID('page13942_shape13955')
-shape13955.addIe8Attr(656.000000, 189.000000, 26.000000, 25.000000, 0, 0)
+shape13955.addIe8Attr(656.000000, 195.000000, 26.000000, 25.000000, 0, 0)
 shape13955.initImageMap(1,'25,12,1,24,1,1,25,12','M 25.000000 12.000000 L 1.000000 24.000000 L 1.000000 1.000000 L 25.000000 12.000000 z', '', 'stroke:#010000; stroke-width:1; stroke-linejoin:round;stroke-dasharray: none; fill:#21314D;"' , '')
 shape13955.setUseSvgFile(1)
 shape13955.addBorder(0)
@@ -447,6 +407,46 @@ shape13955.onUp = shape13955onUp
 shape13955.hasOnUp = true
 shape13955.capture=4
 shape13955.build()
+
+image13944 = new ObjImage('image13944','images/pantry.jpg','pantry',-30,-71,1009,569,1,3,'div',null, 0 )
+image13944.initRotateAngle(0,0,0,0,0,0,0)
+image13944.initHasShadow(0)
+image13944.initHasReflection(0)
+image13944.addIe8Attr(-30, -71, 1009, 569, 0, 0)
+image13944.initImageMap(1,'0,0,1009,0,1009,569,0,569,0,0','M 0 0 L 1009 0 L 1009 569 L 0 569 L 0 0 z')
+image13944.addBorder(0)
+image13944.addOpacity(100)
+image13944.build()
+
+shape13948 = new ObjImage('shape13948','images/shape13948.png','Callout Ellipse',522,50,270.000000,188.000000,1,4,'div','',0 )
+shape13948.initRotateAngle(0,0,0,-1.000000,0.000000,269,186)
+shape13948.initHasShadow(0)
+shape13948.initHasReflection(0)
+shape13948.setUniqueFillID('page13942_shape13948')
+shape13948.addIe8Attr(522.000000, 50.000000, 270.000000, 188.000000, 0, 0)
+shape13948.initImageMap(1,'61,170,72,175,83,179,95,182,107,184,119,185,131,186,143,186,155,185,167,183,178,181,190,178,201,174,211,170,221,164,230,159,239,152,246,145,253,137,258,130,263,122,266,113,268,105,269,97,269,88,268,80,265,72,262,64,258,56,252,48,246,41,238,34,230,27,220,21,210,16,199,11,188,8,177,5,165,2,153,1,141,0,129,0,117,1,105,2,94,5,82,8,71,11,60,16,50,21,40,27,32,34,24,41,18,48,13,55,8,63,5,71,2,80,1,88,1,96,2,105,4,113,7,121,12,129,17,137,24,145,1,186,61,170','M 60.812500 170.437500 L 71.812500 175.000000 L 83.125000 178.750000 L 94.812500 181.750000 L 106.687500 183.937500 L 118.750000 185.312500 L 130.812500 186.000000 L 142.937500 185.875000 L 154.937500 185.000000 L 166.812500 183.375000 L 178.375000 181.000000 L 189.687500 177.937500 L 200.625000 174.125000 L 211.062500 169.625000 L 220.937500 164.375000 L 230.187500 158.500000 L 238.750000 151.875000 L 246.375000 144.750000 L 252.875000 137.250000 L 258.312500 129.500000 L 262.562500 121.500000 L 265.812500 113.375000 L 267.875000 105.062500 L 268.937500 96.687500 L 268.875000 88.312500 L 267.687500 79.937500 L 265.437500 71.687500 L 262.187500 63.562500 L 257.750000 55.625000 L 252.312500 48.000000 L 245.812500 40.687500 L 238.250000 33.687500 L 229.625000 27.125000 L 220.125000 21.187500 L 210.062500 15.937500 L 199.437500 11.437500 L 188.375000 7.687500 L 177.000000 4.687500 L 165.250000 2.437500 L 153.375000 0.875000 L 141.312500 0.125000 L 129.250000 0.125000 L 117.187500 0.812500 L 105.250000 2.312500 L 93.500000 4.562500 L 82.000000 7.625000 L 70.812500 11.375000 L 60.062500 15.937500 L 49.812500 21.250000 L 40.312500 27.187500 L 31.875000 33.687500 L 24.375000 40.562500 L 17.875000 47.812500 L 12.500000 55.375000 L 8.062500 63.250000 L 4.750000 71.312500 L 2.437500 79.562500 L 1.250000 87.875000 L 1.125000 96.312500 L 2.062500 104.687500 L 4.125000 113.062500 L 7.375000 121.250000 L 11.687500 129.375000 L 17.125000 137.250000 L 23.750000 144.812500 L 1.000000 186.000000 L 60.812500 170.437500 z', '', 'stroke:#010000; stroke-width:1; stroke-linejoin:round;stroke-dasharray: none; fill:#FFFFFF;"' , '')
+shape13948.setUseSvgFile(1)
+shape13948.addBorder(0)
+shape13948.initLineWeight(1)
+shape13948.addOpacity(100)
+shape13948.build()
+
+text13949 = new ObjText('text13949',null,560,80,209,127,1,5,null,'div',null,0 )
+text13949.initSLine(0)
+text13949.initHasBullet(0)
+text13949.initRotateAngle(0,0,0)
+text13949.initHasOuterShadow(0)
+text13949.initHasTextShadow(0)
+text13949.initHasBorder(0)
+text13949.initHasOutline(0)
+text13949.initHasMargin(0)
+text13949.addIe8Attr(560, 80, 209, 127, 0, 0)
+text13949.addHeading(0)
+text13949.addOpacity(100)
+text13949.arrCSSStyles = new Array();
+text13949.arrCSSStyles.push('span.text13949Font1 { font-size:16px; font-family:"Arial", sans-serif; color:#010101;}');
+text13949.addInnerText('<div id=\"text13949\" aria-live=\"off\"  ><p lang=\"en\"  legLH=\"1.409\" style=\"margin-left:0px;text-indent:0px;line-height:1.350;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text13949Font1\" style=\"position:relative;top:-2px;\" >You\'ve earned Salt- the essential seasoning that starts every dish, just like remembering facts and terms are the essential foundations of all learning\n</span ></p ></div>\n');
+text13949.build()
 
 audio14105 = new ObjMedia('audio14105','Salt',324,201,1,1,0,6,'media/salt.mp3',0,1,0,0,1,0.800000,0,'div',0);
 audio14105.bNeedPool = true;
@@ -466,10 +466,10 @@ image15186.addOpacity(100)
 image15186.build()
 
 arObjs.push(button27520);
+arObjs.push(shape13955);
 arObjs.push(image13944);
 arObjs.push(shape13948);
 arObjs.push(text13949);
-arObjs.push(shape13955);
 arObjs.push(audio14105);
 arObjs.push(image15186);
 
@@ -498,10 +498,10 @@ if( is.min ){
 <script>
 if( is.min ){
     appendElement(button27520, null, null);
+    appendElement(shape13955, null, null);
     appendElement(image13944, null, null);
     appendElement(shape13948, null, null);
     appendElement(text13949, null, null);
-    appendElement(shape13955, null, null);
     appendElement(audio14105, null, null);
     appendElement(image15186, null, null);
 }

@@ -194,21 +194,21 @@ function init11() {
   findWH()
   if( is.min ){
     trivPageTracking.InitPageTracking();
-    PreloadResources(new Array(button27759,image14147,shape14151,text14152,audio14182,shape14158,image15295))
+    PreloadResources(new Array(button27759,shape14158,image14147,shape14151,text14152,audio14182,image15295))
     pageLayer.show(true);
     button27759.init()
+    shape14158.init()
     image14147.init()
     shape14151.init()
     text14152.init()
     audio14182.init()
-    shape14158.init()
     image15295.init()
     button27759.activate()
+    shape14158.activate()
     image14147.activate()
     shape14151.activate()
     text14152.activate()
     audio14182.activate()
-    shape14158.activate()
     image15295.activate()
 button27759.strCookieState = (trivBtnTracking.GetRangeStatus(27759,true));
 button27759.loadStateFromSes("normalState");
@@ -332,16 +332,6 @@ function button27759onUp() {
   action27760();
 }
 
-function audio14182evEvent_1(fn){
-    shape14158.actionShow(); 
-    if(fn && typeof(fn) == 'string' ) eval(fn);
-    else if(fn && typeof(fn) == 'function' ) fn();
-}
-
-function audio14182onSelChg(evt,name,i) {
-  if(name=='Event 1') audio14182evEvent_1(); 
-}
-
 function action14159(fn){
     trivExitPage('page11948.html',true); 
     if(fn && typeof(fn) == 'string' ) eval(fn);
@@ -350,6 +340,16 @@ function action14159(fn){
 
 function shape14158onUp() {
   action14159();
+}
+
+function audio14182evEvent_1(fn){
+    shape14158.actionShow(); 
+    if(fn && typeof(fn) == 'string' ) eval(fn);
+    else if(fn && typeof(fn) == 'function' ) fn();
+}
+
+function audio14182onSelChg(evt,name,i) {
+  if(name=='Event 1') audio14182evEvent_1(); 
 }
 
 function updateFLVPlayer(bMute){
@@ -392,7 +392,23 @@ button27759.bOverEnabled = true;
 button27759.bDownEnabled = true;
 button27759.build()
 
-image14147 = new ObjImage('image14147','images/pantry.jpg','pantry',-30,-71,1009,569,1,2,'div',null, 0 )
+shape14158 = new ObjImage('shape14158','images/shape14158.png','Triangle Right',623,212,26.000000,25.000000,0,19,'div','',0 )
+shape14158.initRotateAngle(0,0,0,-1.000000,-1.000000,24,23)
+shape14158.initHasShadow(0)
+shape14158.initHasReflection(0)
+shape14158.setUniqueFillID('page14145_shape14158')
+shape14158.addIe8Attr(623.000000, 212.000000, 26.000000, 25.000000, 0, 0)
+shape14158.initImageMap(1,'25,12,1,24,1,1,25,12','M 25.000000 12.000000 L 1.000000 24.000000 L 1.000000 1.000000 L 25.000000 12.000000 z', '', 'stroke:#010000; stroke-width:1; stroke-linejoin:round;stroke-dasharray: none; fill:#21314D;"' , '')
+shape14158.setUseSvgFile(1)
+shape14158.addBorder(0)
+shape14158.initLineWeight(1)
+shape14158.addOpacity(100)
+shape14158.onUp = shape14158onUp
+shape14158.hasOnUp = true
+shape14158.capture=4
+shape14158.build()
+
+image14147 = new ObjImage('image14147','images/pantry.jpg','pantry',-30,-71,1009,569,1,3,'div',null, 0 )
 image14147.initRotateAngle(0,0,0,0,0,0,0)
 image14147.initHasShadow(0)
 image14147.initHasReflection(0)
@@ -402,7 +418,7 @@ image14147.addBorder(0)
 image14147.addOpacity(100)
 image14147.build()
 
-shape14151 = new ObjImage('shape14151','images/shape14151.png','Callout Ellipse',501,60,274.000000,182.000000,1,3,'div','',0 )
+shape14151 = new ObjImage('shape14151','images/shape14151.png','Callout Ellipse',501,60,274.000000,182.000000,1,4,'div','',0 )
 shape14151.initRotateAngle(0,0,0,-1.000000,0.000000,273,181)
 shape14151.initHasShadow(0)
 shape14151.initHasReflection(0)
@@ -415,7 +431,7 @@ shape14151.initLineWeight(1)
 shape14151.addOpacity(100)
 shape14151.build()
 
-text14152 = new ObjText('text14152',null,543,87,210,127,1,4,null,'div',null,0 )
+text14152 = new ObjText('text14152',null,543,87,210,127,1,5,null,'div',null,0 )
 text14152.initSLine(0)
 text14152.initHasBullet(0)
 text14152.initRotateAngle(0,0,0)
@@ -432,29 +448,13 @@ text14152.arrCSSStyles.push('span.text14152Font1 { font-size:16px; font-family:"
 text14152.addInnerText('<div id=\"text14152\" aria-live=\"off\"  ><p lang=\"en\"  legLH=\"1.409\" style=\"margin-left:0px;text-indent:0px;line-height:1.350;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text14152Font1\" style=\"position:relative;top:-2px;\" >You\'ve earned Pepper- adding just the right kick, helping you connect ideas and explain them clearly, the way understanding gives meaning to information\n</span ></p ></div>\n');
 text14152.build()
 
-audio14182 = new ObjMedia('audio14182','Pepper',324,201,1,1,0,5,'media/pepper.mp3',0,1,0,0,1,0.800000,0,'div',0);
+audio14182 = new ObjMedia('audio14182','Pepper',324,201,1,1,0,6,'media/pepper.mp3',0,1,0,0,1,0.800000,0,'div',0);
 audio14182.bNeedPool = true;
 audio14182.bSpeedControl = true;
 audio14182.BuildMediaString()
 audio14182.build()
 
 audio14182.addEvent('9.00', 'audio14182evEvent_1')
-shape14158 = new ObjImage('shape14158','images/shape14158.png','Triangle Right',623,212,26.000000,25.000000,0,6,'div','',0 )
-shape14158.initRotateAngle(0,0,0,-1.000000,-1.000000,24,23)
-shape14158.initHasShadow(0)
-shape14158.initHasReflection(0)
-shape14158.setUniqueFillID('page14145_shape14158')
-shape14158.addIe8Attr(623.000000, 212.000000, 26.000000, 25.000000, 0, 0)
-shape14158.initImageMap(1,'25,12,1,24,1,1,25,12','M 25.000000 12.000000 L 1.000000 24.000000 L 1.000000 1.000000 L 25.000000 12.000000 z', '', 'stroke:#010000; stroke-width:1; stroke-linejoin:round;stroke-dasharray: none; fill:#21314D;"' , '')
-shape14158.setUseSvgFile(1)
-shape14158.addBorder(0)
-shape14158.initLineWeight(1)
-shape14158.addOpacity(100)
-shape14158.onUp = shape14158onUp
-shape14158.hasOnUp = true
-shape14158.capture=4
-shape14158.build()
-
 image15295 = new ObjImage('image15295','images/pepper_ingredient.png','Pepper ingredient',-96,0,1009,567,1,7,'div',null, 0 )
 image15295.initRotateAngle(0,0,0,0,0,0,0)
 image15295.initHasShadow(0)
@@ -466,11 +466,11 @@ image15295.addOpacity(100)
 image15295.build()
 
 arObjs.push(button27759);
+arObjs.push(shape14158);
 arObjs.push(image14147);
 arObjs.push(shape14151);
 arObjs.push(text14152);
 arObjs.push(audio14182);
-arObjs.push(shape14158);
 arObjs.push(image15295);
 
 
@@ -498,11 +498,11 @@ if( is.min ){
 <script>
 if( is.min ){
     appendElement(button27759, null, null);
+    appendElement(shape14158, null, null);
     appendElement(image14147, null, null);
     appendElement(shape14151, null, null);
     appendElement(text14152, null, null);
     appendElement(audio14182, null, null);
-    appendElement(shape14158, null, null);
     appendElement(image15295, null, null);
 }
 </script>

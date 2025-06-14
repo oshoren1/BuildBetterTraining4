@@ -347,7 +347,7 @@ function doImmFeedback( objId ) {
       qu13813PrevAns = ans_VarQuestion_0003;
    if( ans_VarQuestion_0003 != '~~~null~~~' ) {
     { //1 
-        trivActFBCnt++; action13813_17(onAfterFBAction);  return 0;
+        trivActFBCnt++; action13813_23(onAfterFBAction);  return 0;
   } //1
 
       }
@@ -380,14 +380,8 @@ function Offset_qu13813(bDevRotate) {
 }
 
 
-function action13813_17(fn){
-    if(!document.getElementById("DLG_Div_13813"))trivAlert( 'action13813_17', 'BuildBetterTraining', 'Sample answer 1:\n Ask learners to explain the concept in their own words or give an example of it in their work. If they can’t explain it without repeating the exact wording from the slide, they likely don’t understand it yet..\n\nSample Answer 2:\nI’d include group discussions or storytelling prompts where learners connect a concept to a real work example. This makes them interpret the idea instead of just repeating it.', fn );
-}
-
-function action13907(fn){
-    
-    if(fn && typeof(fn) == 'string' ) eval(fn);
-    else if(fn && typeof(fn) == 'function' ) fn();
+function action13813_23(fn){
+    if(!document.getElementById("DLG_Div_13813"))trivAlert( 'action13813_23', 'BuildBetterTraining', 'Sample answer 1:\n Ask learners to explain the concept in their own words or give an example of it in their work. If they can’t explain it without repeating the exact wording from the slide, they likely don’t understand it yet..\n\nSample Answer 2:\nI’d include group discussions or storytelling prompts where learners connect a concept to a real work example. This makes them interpret the idea instead of just repeating it.', fn );
 }
 
 function action13909(fn){
@@ -397,7 +391,7 @@ function action13909(fn){
 }
 
 function entry13816onSelChg() {
-  action13907();action13909();
+  action13909();
 }
 
 function Update_entry13816( upd ) {
@@ -413,7 +407,7 @@ function Update_entry13816( upd ) {
 }
 
 function action13871(fn){
-    qu13813.actionShow(); 
+    text13775.actionShow(); 
     if(fn && typeof(fn) == 'string' ) eval(fn);
     else if(fn && typeof(fn) == 'function' ) fn();
 }

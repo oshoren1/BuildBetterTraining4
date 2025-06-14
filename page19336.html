@@ -377,9 +377,9 @@ function doImmFeedback( objId ) {
         if( offset < 0 ) wrong = true
         else offset = offset + arrAns[idx].length
       }
-    if( !wrong ) {        trivActFBCnt++; action19380_55(onAfterFBAction); return 0;  } //1
+    if( !wrong ) {        trivActFBCnt++; action19380_61(onAfterFBAction); return 0;  } //1
 
-    if( wrong ) {trivActFBCnt++; action19380_56(onAfterFBAction); return 0;  } //2 
+    if( wrong ) {trivActFBCnt++; action19380_62(onAfterFBAction); return 0;  } //2 
 
     }
   }
@@ -489,12 +489,12 @@ function Update_qu19380() {
   doImmFeedback('qu19380');
 }
 
-function action19380_55(fn){
-    if(!document.getElementById("DLG_Div_19380"))trivAlert( 'action19380_55', 'BuildBetterTraining', 'Correct!', fn );
+function action19380_61(fn){
+    if(!document.getElementById("DLG_Div_19380"))trivAlert( 'action19380_61', 'BuildBetterTraining', 'Correct!', fn );
 }
 
-function action19380_56(fn){
-    if(!document.getElementById("DLG_Div_19380"))trivAlert( 'action19380_56', 'BuildBetterTraining', 'You answered the question incorrectly.', fn );
+function action19380_62(fn){
+    if(!document.getElementById("DLG_Div_19380"))trivAlert( 'action19380_62', 'BuildBetterTraining', 'You answered the question incorrectly.', fn );
 }
 
 function action19348(fn){

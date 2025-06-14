@@ -194,22 +194,22 @@ function init11() {
   findWH()
   if( is.min ){
     trivPageTracking.InitPageTracking();
-    PreloadResources(new Array(button28482,image18100,shape18102,text18103,image18114,audio18283,shape18107))
+    PreloadResources(new Array(button28482,shape18107,image18100,shape18102,text18103,image18114,audio18283))
     pageLayer.show(true);
     button28482.init()
+    shape18107.init()
     image18100.init()
     shape18102.init()
     text18103.init()
     image18114.init()
     audio18283.init()
-    shape18107.init()
     button28482.activate()
+    shape18107.activate()
     image18100.activate()
     shape18102.activate()
     text18103.activate()
     image18114.activate()
     audio18283.activate()
-    shape18107.activate()
 button28482.strCookieState = (trivBtnTracking.GetRangeStatus(28482,true));
 button28482.loadStateFromSes("normalState");
 		    try{
@@ -332,16 +332,6 @@ function button28482onUp() {
   action28483();
 }
 
-function audio18283evEvent_1(fn){
-    shape18107.actionShow(); 
-    if(fn && typeof(fn) == 'string' ) eval(fn);
-    else if(fn && typeof(fn) == 'function' ) fn();
-}
-
-function audio18283onSelChg(evt,name,i) {
-  if(name=='Event 1') audio18283evEvent_1(); 
-}
-
 function action18108(fn){
     trivExitPage('page12684.html',true); 
     if(fn && typeof(fn) == 'string' ) eval(fn);
@@ -350,6 +340,16 @@ function action18108(fn){
 
 function shape18107onUp() {
   action18108();
+}
+
+function audio18283evEvent_1(fn){
+    shape18107.actionShow(); 
+    if(fn && typeof(fn) == 'string' ) eval(fn);
+    else if(fn && typeof(fn) == 'function' ) fn();
+}
+
+function audio18283onSelChg(evt,name,i) {
+  if(name=='Event 1') audio18283evEvent_1(); 
 }
 
 function updateFLVPlayer(bMute){
@@ -392,7 +392,23 @@ button28482.bOverEnabled = true;
 button28482.bDownEnabled = true;
 button28482.build()
 
-image18100 = new ObjImage('image18100','images/pantry.jpg','pantry',-30,-71,1009,569,1,2,'div',null, 0 )
+shape18107 = new ObjImage('shape18107','images/shape18107.png','Triangle Right',644,213,26.000000,25.000000,0,19,'div','',0 )
+shape18107.initRotateAngle(0,0,0,-1.000000,-1.000000,24,23)
+shape18107.initHasShadow(0)
+shape18107.initHasReflection(0)
+shape18107.setUniqueFillID('page18098_shape18107')
+shape18107.addIe8Attr(644.000000, 213.000000, 26.000000, 25.000000, 0, 0)
+shape18107.initImageMap(1,'25,12,1,24,1,1,25,12','M 25.000000 12.000000 L 1.000000 24.000000 L 1.000000 1.000000 L 25.000000 12.000000 z', '', 'stroke:#010000; stroke-width:1; stroke-linejoin:round;stroke-dasharray: none; fill:#21314D;"' , '')
+shape18107.setUseSvgFile(1)
+shape18107.addBorder(0)
+shape18107.initLineWeight(1)
+shape18107.addOpacity(100)
+shape18107.onUp = shape18107onUp
+shape18107.hasOnUp = true
+shape18107.capture=4
+shape18107.build()
+
+image18100 = new ObjImage('image18100','images/pantry.jpg','pantry',-30,-71,1009,569,1,3,'div',null, 0 )
 image18100.initRotateAngle(0,0,0,0,0,0,0)
 image18100.initHasShadow(0)
 image18100.initHasReflection(0)
@@ -402,7 +418,7 @@ image18100.addBorder(0)
 image18100.addOpacity(100)
 image18100.build()
 
-shape18102 = new ObjImage('shape18102','images/shape18102.png','Callout Ellipse',534,55,246.000000,192.000000,1,3,'div','',0 )
+shape18102 = new ObjImage('shape18102','images/shape18102.png','Callout Ellipse',534,55,246.000000,192.000000,1,4,'div','',0 )
 shape18102.initRotateAngle(0,0,0,-1.000000,0.000000,244,191)
 shape18102.initHasShadow(0)
 shape18102.initHasReflection(0)
@@ -415,7 +431,7 @@ shape18102.initLineWeight(1)
 shape18102.addOpacity(100)
 shape18102.build()
 
-text18103 = new ObjText('text18103',null,563,94,200,94,1,4,null,'div',null,0 )
+text18103 = new ObjText('text18103',null,563,94,200,94,1,5,null,'div',null,0 )
 text18103.initSLine(0)
 text18103.initHasBullet(0)
 text18103.initRotateAngle(0,0,0)
@@ -432,7 +448,7 @@ text18103.arrCSSStyles.push('span.text18103Font1 { font-size:16px; font-family:"
 text18103.addInnerText('<div id=\"text18103\" aria-live=\"off\"  ><p lang=\"en\"  legLH=\"1.409\" style=\"margin-left:0px;text-indent:0px;line-height:1.350;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text18103Font1\" style=\"position:relative;top:-2px;\" >You\'ve earned Lemon- bright and sharp, helping you refine and judge decisions carefully, just like evaluation sharpens learning strategies\n</span ></p ></div>\n');
 text18103.build()
 
-image18114 = new ObjImage('image18114','images/lemon_ingredientcrop_image18114.png','Lemon ingredient',298,84,233,396,1,5,'div',null, 0 )
+image18114 = new ObjImage('image18114','images/lemon_ingredientcrop_image18114.png','Lemon ingredient',298,84,233,396,1,6,'div',null, 0 )
 image18114.initRotateAngle(0,0,0,0,0,0,0)
 image18114.initHasShadow(0)
 image18114.initHasReflection(0)
@@ -442,36 +458,20 @@ image18114.addBorder(0)
 image18114.addOpacity(100)
 image18114.build()
 
-audio18283 = new ObjMedia('audio18283','lemon',324,201,1,1,0,6,'media/lemon.mp3',0,1,0,0,1,0.800000,0,'div',0);
+audio18283 = new ObjMedia('audio18283','lemon',324,201,1,1,0,7,'media/lemon.mp3',0,1,0,0,1,0.800000,0,'div',0);
 audio18283.bNeedPool = true;
 audio18283.bSpeedControl = true;
 audio18283.BuildMediaString()
 audio18283.build()
 
 audio18283.addEvent('8.00', 'audio18283evEvent_1')
-shape18107 = new ObjImage('shape18107','images/shape18107.png','Triangle Right',656,200,26.000000,25.000000,0,7,'div','',0 )
-shape18107.initRotateAngle(0,0,0,-1.000000,-1.000000,24,23)
-shape18107.initHasShadow(0)
-shape18107.initHasReflection(0)
-shape18107.setUniqueFillID('page18098_shape18107')
-shape18107.addIe8Attr(656.000000, 200.000000, 26.000000, 25.000000, 0, 0)
-shape18107.initImageMap(1,'25,12,1,24,1,1,25,12','M 25.000000 12.000000 L 1.000000 24.000000 L 1.000000 1.000000 L 25.000000 12.000000 z', '', 'stroke:#010000; stroke-width:1; stroke-linejoin:round;stroke-dasharray: none; fill:#21314D;"' , '')
-shape18107.setUseSvgFile(1)
-shape18107.addBorder(0)
-shape18107.initLineWeight(1)
-shape18107.addOpacity(100)
-shape18107.onUp = shape18107onUp
-shape18107.hasOnUp = true
-shape18107.capture=4
-shape18107.build()
-
 arObjs.push(button28482);
+arObjs.push(shape18107);
 arObjs.push(image18100);
 arObjs.push(shape18102);
 arObjs.push(text18103);
 arObjs.push(image18114);
 arObjs.push(audio18283);
-arObjs.push(shape18107);
 
 
 writeStyleSheets(arObjs);}
@@ -498,12 +498,12 @@ if( is.min ){
 <script>
 if( is.min ){
     appendElement(button28482, null, null);
+    appendElement(shape18107, null, null);
     appendElement(image18100, null, null);
     appendElement(shape18102, null, null);
     appendElement(text18103, null, null);
     appendElement(image18114, null, null);
     appendElement(audio18283, null, null);
-    appendElement(shape18107, null, null);
 }
 </script>
 

@@ -7,9 +7,9 @@ DesktopResponsive={"1009":{
 ,
 "image13550":{"x":51,"y":107,"w":858,"h":462,"bOffBottom":0,"i":"images/recipe_cardcrop_image9621.png"}
 ,
-"text13657":{"x":116,"y":235,"w":729,"h":91,"txtscale":100,"bOffBottom":0}
+"text13657":{"x":116,"y":235,"w":729,"h":93,"txtscale":100,"bOffBottom":0}
 ,
-"entry13658":{"x":116,"y":332,"w":661,"h":200,"fsize":16,"bOffBottom":0}
+"entry13658":{"x":116,"y":341,"w":661,"h":191,"fsize":16,"bOffBottom":0}
 ,
 "image13553":{"x":534,"y":61,"w":224,"h":211,"bOffBottom":0,"i":"images/knifecrop_image9630.png"}
 ,

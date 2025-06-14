@@ -194,21 +194,21 @@ function init11() {
   findWH()
   if( is.min ){
     trivPageTracking.InitPageTracking();
-    PreloadResources(new Array(button28243,image14645,shape14649,text14650,audio15024,shape16334,image15601))
+    PreloadResources(new Array(button28243,shape16334,image14645,shape14649,text14650,audio15024,image15601))
     pageLayer.show(true);
     button28243.init()
+    shape16334.init()
     image14645.init()
     shape14649.init()
     text14650.init()
     audio15024.init()
-    shape16334.init()
     image15601.init()
     button28243.activate()
+    shape16334.activate()
     image14645.activate()
     shape14649.activate()
     text14650.activate()
     audio15024.activate()
-    shape16334.activate()
     image15601.activate()
 button28243.strCookieState = (trivBtnTracking.GetRangeStatus(28243,true));
 button28243.loadStateFromSes("normalState");
@@ -332,16 +332,6 @@ function button28243onUp() {
   action28244();
 }
 
-function audio15024evEvent_1(fn){
-    shape16334.actionShow(); 
-    if(fn && typeof(fn) == 'string' ) eval(fn);
-    else if(fn && typeof(fn) == 'function' ) fn();
-}
-
-function audio15024onSelChg(evt,name,i) {
-  if(name=='Event 1') audio15024evEvent_1(); 
-}
-
 function action16335(fn){
     trivExitPage('page12501.html',true); 
     if(fn && typeof(fn) == 'string' ) eval(fn);
@@ -350,6 +340,16 @@ function action16335(fn){
 
 function shape16334onUp() {
   action16335();
+}
+
+function audio15024evEvent_1(fn){
+    shape16334.actionShow(); 
+    if(fn && typeof(fn) == 'string' ) eval(fn);
+    else if(fn && typeof(fn) == 'function' ) fn();
+}
+
+function audio15024onSelChg(evt,name,i) {
+  if(name=='Event 1') audio15024evEvent_1(); 
 }
 
 function updateFLVPlayer(bMute){
@@ -392,7 +392,23 @@ button28243.bOverEnabled = true;
 button28243.bDownEnabled = true;
 button28243.build()
 
-image14645 = new ObjImage('image14645','images/pantry.jpg','pantry',-30,-71,1009,569,1,2,'div',null, 0 )
+shape16334 = new ObjImage('shape16334','images/shape16334.png','Triangle Right',663,201,26.000000,25.000000,0,19,'div','',0 )
+shape16334.initRotateAngle(0,0,0,-1.000000,-1.000000,24,23)
+shape16334.initHasShadow(0)
+shape16334.initHasReflection(0)
+shape16334.setUniqueFillID('page14643_shape16334')
+shape16334.addIe8Attr(663.000000, 201.000000, 26.000000, 25.000000, 0, 0)
+shape16334.initImageMap(1,'25,12,1,24,1,1,25,12','M 25.000000 12.000000 L 1.000000 24.000000 L 1.000000 1.000000 L 25.000000 12.000000 z', '', 'stroke:#010000; stroke-width:1; stroke-linejoin:round;stroke-dasharray: none; fill:#21314D;"' , '')
+shape16334.setUseSvgFile(1)
+shape16334.addBorder(0)
+shape16334.initLineWeight(1)
+shape16334.addOpacity(100)
+shape16334.onUp = shape16334onUp
+shape16334.hasOnUp = true
+shape16334.capture=4
+shape16334.build()
+
+image14645 = new ObjImage('image14645','images/pantry.jpg','pantry',-30,-71,1009,569,1,3,'div',null, 0 )
 image14645.initRotateAngle(0,0,0,0,0,0,0)
 image14645.initHasShadow(0)
 image14645.initHasReflection(0)
@@ -402,20 +418,20 @@ image14645.addBorder(0)
 image14645.addOpacity(100)
 image14645.build()
 
-shape14649 = new ObjImage('shape14649','images/shape14649.png','Callout Ellipse',534,55,246.000000,166.000000,1,3,'div','',0 )
-shape14649.initRotateAngle(0,0,0,-1.000000,0.000000,244,165)
+shape14649 = new ObjImage('shape14649','images/shape14649.png','Callout Ellipse',534,55,260.000000,176.000000,1,4,'div','',0 )
+shape14649.initRotateAngle(0,0,0,-1.000000,0.000000,259,175)
 shape14649.initHasShadow(0)
 shape14649.initHasReflection(0)
 shape14649.setUniqueFillID('page14643_shape14649')
-shape14649.addIe8Attr(534.000000, 55.000000, 246.000000, 166.000000, 0, 0)
-shape14649.initImageMap(1,'55,150,65,154,75,158,86,160,97,162,108,163,119,164,130,164,141,163,151,162,162,160,172,157,182,154,192,150,201,145,209,140,217,134,224,128,230,121,235,115,239,108,242,100,244,93,245,86,245,78,244,71,242,64,239,56,235,50,230,43,224,36,217,30,210,24,201,19,192,14,182,10,172,7,162,4,151,2,140,1,129,0,118,0,107,1,97,2,86,4,75,7,65,10,55,14,46,19,37,24,30,29,23,35,17,42,12,49,8,55,5,63,2,70,1,77,1,85,2,92,4,99,7,107,11,114,15,121,21,127,1,164,55,150','M 54.937500 150.062500 L 64.875000 154.125000 L 75.187500 157.500000 L 85.812500 160.125000 L 96.625000 162.125000 L 107.562500 163.375000 L 118.562500 164.000000 L 129.625000 163.937500 L 140.562500 163.187500 L 151.375000 161.812500 L 161.937500 159.750000 L 172.250000 157.062500 L 182.250000 153.750000 L 191.750000 149.812500 L 200.812500 145.250000 L 209.312500 140.062500 L 217.125000 134.250000 L 224.125000 128.000000 L 230.062500 121.437500 L 235.062500 114.562500 L 239.000000 107.562500 L 242.000000 100.375000 L 243.937500 93.062500 L 244.937500 85.687500 L 244.937500 78.250000 L 243.937500 70.875000 L 241.937500 63.625000 L 238.937500 56.437500 L 235.000000 49.500000 L 230.125000 42.687500 L 224.250000 36.250000 L 217.375000 30.062500 L 209.562500 24.250000 L 200.937500 18.937500 L 191.812500 14.312500 L 182.187500 10.312500 L 172.187500 7.000000 L 161.812500 4.250000 L 151.187500 2.250000 L 140.312500 0.875000 L 129.375000 0.125000 L 118.375000 0.062500 L 107.437500 0.687500 L 96.500000 2.000000 L 85.812500 3.937500 L 75.312500 6.562500 L 65.125000 9.875000 L 55.312500 13.812500 L 45.937500 18.500000 L 37.250000 23.750000 L 29.500000 29.375000 L 22.625000 35.437500 L 16.687500 41.812500 L 11.687500 48.500000 L 7.625000 55.375000 L 4.562500 62.500000 L 2.437500 69.750000 L 1.250000 77.125000 L 1.062500 84.500000 L 1.937500 91.937500 L 3.750000 99.312500 L 6.625000 106.562500 L 10.500000 113.687500 L 15.375000 120.687500 L 21.375000 127.375000 L 1.000000 164.000000 L 54.937500 150.062500 z', '', 'stroke:#010000; stroke-width:1; stroke-linejoin:round;stroke-dasharray: none; fill:#FFFFFF;"' , '')
+shape14649.addIe8Attr(534.000000, 55.000000, 260.000000, 176.000000, 0, 0)
+shape14649.initImageMap(1,'58,159,69,164,80,167,91,170,102,172,114,173,126,174,137,174,149,173,160,172,171,169,182,167,193,163,203,159,213,154,221,149,230,142,237,136,243,129,249,121,253,114,256,106,258,99,259,91,259,83,258,75,256,67,253,60,248,52,243,45,237,38,230,32,221,26,212,20,203,15,192,11,182,7,171,4,160,2,148,1,137,0,125,0,113,1,102,2,90,4,79,7,69,11,58,15,48,20,39,25,31,31,24,38,17,45,12,52,8,59,5,67,2,74,1,82,1,90,2,98,4,106,7,113,11,121,16,128,23,135,1,174,58,159','M 58.250000 159.312500 L 68.812500 163.625000 L 79.687500 167.125000 L 90.937500 169.937500 L 102.375000 172.000000 L 113.937500 173.375000 L 125.625000 174.000000 L 137.250000 173.875000 L 148.812500 173.125000 L 160.250000 171.625000 L 171.437500 169.437500 L 182.375000 166.562500 L 192.875000 163.062500 L 202.937500 158.875000 L 212.500000 154.000000 L 221.437500 148.500000 L 229.687500 142.312500 L 237.062500 135.625000 L 243.375000 128.687500 L 248.562500 121.437500 L 252.750000 113.937500 L 255.875000 106.312500 L 257.937500 98.562500 L 258.937500 90.687500 L 258.875000 82.875000 L 257.812500 75.062500 L 255.687500 67.312500 L 252.500000 59.750000 L 248.312500 52.312500 L 243.125000 45.125000 L 236.875000 38.250000 L 229.625000 31.687500 L 221.312500 25.562500 L 212.187500 19.937500 L 202.500000 15.062500 L 192.312500 10.812500 L 181.750000 7.312500 L 170.750000 4.437500 L 159.500000 2.312500 L 148.062500 0.875000 L 136.500000 0.125000 L 124.875000 0.125000 L 113.250000 0.750000 L 101.750000 2.125000 L 90.375000 4.250000 L 79.312500 7.062500 L 68.562500 10.562500 L 58.187500 14.812500 L 48.312500 19.750000 L 39.125000 25.312500 L 30.937500 31.312500 L 23.687500 37.750000 L 17.437500 44.500000 L 12.187500 51.625000 L 7.937500 58.937500 L 4.687500 66.500000 L 2.437500 74.187500 L 1.250000 82.000000 L 1.062500 89.812500 L 2.000000 97.687500 L 3.937500 105.500000 L 7.000000 113.250000 L 11.125000 120.812500 L 16.375000 128.187500 L 22.687500 135.312500 L 1.000000 174.000000 L 58.250000 159.312500 z', '', 'stroke:#010000; stroke-width:1; stroke-linejoin:round;stroke-dasharray: none; fill:#FFFFFF;"' , '')
 shape14649.setUseSvgFile(1)
 shape14649.addBorder(0)
 shape14649.initLineWeight(1)
 shape14649.addOpacity(100)
 shape14649.build()
 
-text14650 = new ObjText('text14650',null,569,86,200,127,1,4,null,'div',null,0 )
+text14650 = new ObjText('text14650',null,569,86,200,127,1,5,null,'div',null,0 )
 text14650.initSLine(0)
 text14650.initHasBullet(0)
 text14650.initRotateAngle(0,0,0)
@@ -432,29 +448,13 @@ text14650.arrCSSStyles.push('span.text14650Font1 { font-size:16px; font-family:"
 text14650.addInnerText('<div id=\"text14650\" aria-live=\"off\"  ><p lang=\"en\"  legLH=\"1.409\" style=\"margin-left:0px;text-indent:0px;line-height:1.350;margin-top:0px;margin-bottom:0px;text-align:left;\" >\n<span class=\"text14650Font1\" style=\"position:relative;top:-2px;\" >You\'ve earned Garlic- bold, layered, and complex, just like analyzing helps break ideas down to uncover deeper patterns and relationships\n</span ></p ></div>\n');
 text14650.build()
 
-audio15024 = new ObjMedia('audio15024','Garlic',85,188,1,1,0,5,'media/garlic.mp3',0,1,0,0,1,0.800000,0,'div',0);
+audio15024 = new ObjMedia('audio15024','Garlic',85,188,1,1,0,6,'media/garlic.mp3',0,1,0,0,1,0.800000,0,'div',0);
 audio15024.bNeedPool = true;
 audio15024.bSpeedControl = true;
 audio15024.BuildMediaString()
 audio15024.build()
 
 audio15024.addEvent('9.00', 'audio15024evEvent_1')
-shape16334 = new ObjImage('shape16334','images/shape16334.png','Triangle Right',656,189,26.000000,25.000000,0,6,'div','',0 )
-shape16334.initRotateAngle(0,0,0,-1.000000,-1.000000,24,23)
-shape16334.initHasShadow(0)
-shape16334.initHasReflection(0)
-shape16334.setUniqueFillID('page14643_shape16334')
-shape16334.addIe8Attr(656.000000, 189.000000, 26.000000, 25.000000, 0, 0)
-shape16334.initImageMap(1,'25,12,1,24,1,1,25,12','M 25.000000 12.000000 L 1.000000 24.000000 L 1.000000 1.000000 L 25.000000 12.000000 z', '', 'stroke:#010000; stroke-width:1; stroke-linejoin:round;stroke-dasharray: none; fill:#21314D;"' , '')
-shape16334.setUseSvgFile(1)
-shape16334.addBorder(0)
-shape16334.initLineWeight(1)
-shape16334.addOpacity(100)
-shape16334.onUp = shape16334onUp
-shape16334.hasOnUp = true
-shape16334.capture=4
-shape16334.build()
-
 image15601 = new ObjImage('image15601','images/garlic_ingredient.png','Garlic ingredient',-68,0,1009,567,1,7,'div',null, 0 )
 image15601.initRotateAngle(0,0,0,0,0,0,0)
 image15601.initHasShadow(0)
@@ -466,11 +466,11 @@ image15601.addOpacity(100)
 image15601.build()
 
 arObjs.push(button28243);
+arObjs.push(shape16334);
 arObjs.push(image14645);
 arObjs.push(shape14649);
 arObjs.push(text14650);
 arObjs.push(audio15024);
-arObjs.push(shape16334);
 arObjs.push(image15601);
 
 
@@ -498,11 +498,11 @@ if( is.min ){
 <script>
 if( is.min ){
     appendElement(button28243, null, null);
+    appendElement(shape16334, null, null);
     appendElement(image14645, null, null);
     appendElement(shape14649, null, null);
     appendElement(text14650, null, null);
     appendElement(audio15024, null, null);
-    appendElement(shape16334, null, null);
     appendElement(image15601, null, null);
 }
 </script>
